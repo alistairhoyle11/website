@@ -1,233 +1,60 @@
-<!DOCTYPE html> <!-- Setting coding language to html -->
-<html lang ="en"> <!-- Setting language to english-->
-<style>
-* {
-  box-sizing: border-box;
-}
-.container {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-}
-
-.name_container { grid-area: 1 / 1 / 2 / 4; }
-.topnav { grid-area: 2 / 1 / 3 / 4; }
-.content1 { grid-area: 3 / 1 / 4 / 2; }
-.content2 { grid-area: 3 / 2 / 4 / 3; }
-.content3 { grid-area: 3 / 3 / 4 / 4; }
-.botnav { grid-area: 4 / 1 / 5 / 4; }
-.footer { grid-area: 5 / 1 / 6 / 4; }
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 1fr 2fr 0.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Heading Heading Heading"
+    "Topnav Topnav Topnav"
+    ". Picture ."
+    "Content-1 Content-2 Content-3"
+    "Subfooter Subfooter Subfooter"
+    "Footer Footer Footer";
 }
 
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.Heading { grid-area: Heading; }
+
+.Topnav { grid-area: Topnav; }
+
+.AboutMe { grid-area: Content-1; }
+
+.EarlyEducation  { grid-area: Content-2; }
+
+.Picture { grid-area: Picture; }
+
+.University { grid-area: Content-3; }
+
+.Subfooter { grid-area: Subfooter; }
+
+.Footer { grid-area: Footer; }
+
+
+html, body , .container {
+  height: 100%;
+  margin: 0;
 }
 
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #CCFFCC;
-  color: black;
+.container * {
+  border: 1px solid grey;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+border-top: 3px solid white;
+height: 250;
+background: linear-gradient(to bottom, #3FEEE6, #3FEEE6, #CAFAFE);
 }
-/* Style the bottom navigation bar */
-.btn {
-  flex: 1 1 auto;
-  padding: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
- }
-
-.btn:hover {
-  background-position: right center; /* change the direction of the change here */
-}
-.btn-1 {
-  background-image: linear-gradient(to right, #3FEEE6 0%, #41B3A3 39%,#FFFFFF 50%,#FC4445 61%, #802BB1 100%);
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.body{
-    max-width: 1000px;
-    margin: auto;
-}
-.logo{
-    grid-column: span 3;
-    height: 120px;
-}
-.content{  
-    display:grid;
-    grid-column: span 5;
-    height: 320px;
-    grid-gap: 2rem; 
-}
-
-.sublinks{
-    display:grid;
-    grid-column: span 5;
-    height: 420px;
-    grid-gap: 0.5rem;
-}
-.container3{
-    display:grid;
-    grid-column: span 3;
-    height: 700px;
-
-.container4{
-    display:grid;
-    grid-column: span 5;
-    height: 220px;
-}
-.magazine{
-    grid-column: span 1;
-    height: 200px;
-}
-.latestreviews{
-    grid-column: span 3;
-    height: 200px;
-}
-.botnav{
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 40px; /* Set the fixed height of the footer here */
-	line-height: 40px; /* Vertically center the text there */
-	font-size: 75%;
-	background-color: #dedede;
-}
-.footer{
-    display:grid;
-    grid-column: span 5;
-    height: 160px ;
-}
-.law{
-    grid-column: span 3;
-    height: 120px;
-}
-.container-Footer{
-	display:grid;
-	grid-template-row: 1fr 1fr;
-    	grid-column: span 5;
-   	height: 160px ;
-}
-
-.navigation{
-        grid-column: span 5;
-}
-
-.name_container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-column: span 3;
-    }
-.name_dividing_container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column: span 3;
-    justify-content: left;
-}
-
-</style>
-<head>
-<title>Alistair Thomas Hoyle</title>
-  <!-- Importing the other files -->
-  <link rel="stylesheet" href="C:/Users/Alistair/OneDrive/Documents/CIS1110 cw2/website/Styles/poll.js">
-</head>
-<!-- Main container of the website-->
-<body class="container" style="border-top: 3px solid white; height: 250; background: linear-gradient(to bottom, #3FEEE6, #3FEEE6, #CAFAFE);">
-  <div class="name_container"> 
-    <!-- starting to make a logo need two divs-->
-    <div class=name_container_divider>
-     <h4 style="font-size: 32px;  width: 940px;margin-top: 0px; text-align: center;"><span style = "color: #FC4445; "> Alistair Thomas Hoyle </h4>
-    </div> <!-- Closing class-->
-    <!-- Opening class called navigation-->
-    <div class="container_navigation">
-      <div class="topnav"> <!-- Opening nav id to create the navigation bar -->
-        <ul style= "list-style-type:none; margin-top: 10px; margin-left:125px;"> <!-- Opening unordered list -->
-          <li><a class="active" href= "#Home"> About Me  </a></li> <!-- Active tag-->
-          <li><a href= "Achievements"> My Achievements </a></li> <!-- Linking to Achievements page-->
-          <li><a href= "#Charity"> Charity </a></li> <!-- Tag with no destination-->
-          <li><a href= "#CV"> CV </a></li> <!-- Tag with no destination-->
-          <li><a href= "#Contact Me "> Contact Me </a></li> <!-- Tag with no destination-->
-        </ul> <!-- Closing unordered list -->
-      </nav> <!-- Closing nav-->
-    </div> <!-- Closing class-->
-<!-- Creating a class called content for the main section-->
-<img src="https://media-exp1.licdn.com/dms/image/C4E03AQE6SXYsRsFKww/profile-displayphoto-shrink_400_400/0/1651139881944?e=1658361600&v=beta&t=EvG3V256jLbUCxHiYGGesSDah50NkP4ek7KNPNI-iDU" alt="Alistair" width="200" height="200" class= "center"> 
-<h4 style="font-size: 20px; width: 940px;margin-top: 0px; text-align: center;"><span style = "color: #662387; ">
-<hr style="height:2px;border-width:0;color:gray;background-color:gray; margin-bottom: 50px;">
-<!-- creating a div for sublinks with the four vertical images having text directly underneath it-->
-<div class="container-sublinks" style = color: "white">
-  <div class="sublink1">
-	<span> About Me </h4>
-	  <h4><span style = "color: white; font-size: 24px">Hobbies and Passions </span></h4>
-	  <ul><span style = "color: purple;">
-		<h5 style="font-size: 18px"> Hobbies </h5>
- 		<li>Travelling</li>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-  		<li>Music</li>
-  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-  		<li>Sports</li>
-  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-		</ul>
-<div class="content2">		  
-<h4><span style = "color: white; font-size: 24px"> Early Education </span></h4>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis sollicitudin sollicitudin. Fusce neque purus, elementum in justo at, aliquet tincidunt mauris. Nullam cursus tortor ac elit pretium tristique vitae sit amet dolor. Vivamus consequat ligula ligula, non laoreet nisl dignissim vitae. Sed ex est, tempus ut risus volutpat, egestas vestibulum velit. Nunc id viverra sem, ac interdum risus. Nulla ultricies, quam sit amet iaculis commodo, ante ex ornare ligula, at interdum sem sem quis lectus.
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam bibendum ac ligula.</p></div>
-		  
-<div class="content3">	
-	  <h4><span style = "color: white; font-size: 24px"> Higher Education </span></h4>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis sollicitudin sollicitudin. Fusce neque purus, elementum in justo at, aliquet tincidunt mauris. Nullam cursus tortor ac elit pretium tristique vitae sit amet dolor. Vivamus consequat ligula ligula, non laoreet nisl dignissim vitae. Sed ex est, tempus ut risus volutpat, egestas vestibulum velit. Nunc id viverra sem, ac interdum risus. Nulla ultricies, quam sit amet iaculis commodo, ante ex ornare ligula, at interdum sem sem quis lectus.
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam bibendum ac ligula.</p></div>
-		
-	<hr style="height:2px;border-width:0;color:gray;background-color:gray"></hr>
-<!-- Opening a class for the latest news section-->
-  <!-- Opening java for the user interactions prefering for the java file import class-->
- <!-- <div class="container4" style="padding-bottom: 0px; height: 150px; width: 350px; background-color: white;">
-   <div class="pollsection"></div>
-      <h4><span style = "color: #575859; text-align: left;">Have you ever seen a profile presented like this? </span></h4>
-      <div id="poll">
-       <!-- <p style="color:#C5110B;"></p> 
-      </div> 
-      <div style="padding-left: 40px;">
-        <input type="radio" id="myYes" onclick="YesFunction()"> 
-        <label for="myYes" style="padding-left: 20px;">Yes</label>
-        <script src="poll.js"></script>
-     
-        <br>
-        <input type="radio" id="myNo" onclick="NoFunction()"> 
-        <label for="myNo" style="padding-left: 20px;">No</label> 
-        <br><button> Submit </Button><br>
-        <script src="poll.js"></script>  
-      </div> -->
-      <div class="botnav"> 
-      		<a class="btn btn-1" href= "https://www.linkedin.com/in/alistair-hoyle/"> Linkedin</a>
-          	<a class="btn btn-1" href= "https://www.edgehill.ac.uk"> Uni</a>
-		<a class="btn btn-1" href= "https://www.asda.com"> ASDA</a>
-		<a class="btn btn-1" href= "https://www.leedsparcelcompany.co.uk"> Leeds Parcel Company</a>
-      </nav> <!-- Closing nav-->
-    </div> <!-- Closing class-->
-	<div class="footer">
-		<p> Copyright © and Design: 2022: Alistair Thomas Hoyle </p>
-	</div> <!-- Closing class-->
-</body> <!-- Closing body-->
-</html> <!-- Closing html-->
+<div class="container">
+  <div class="Heading"></div>
+  <div class="Topnav"></div>
+  <div class="AboutMe"></div>
+  <div class="EarlyEducation"></div>
+  <div class="Picture"></div>
+  <div class="University"></div>
+  <div class="Subfooter"></div>
+  <div class="Footer"></div>
+</div>
